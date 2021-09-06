@@ -1,4 +1,5 @@
 const yargs = require('yargs');
+const notes = require('./notes');
 
 /**
  * Read Command line parameters in Node JS
@@ -9,11 +10,11 @@ const yargs = require('yargs');
 
 const command = process.argv[2];
 // console.log('NPM Reading Commandline Arguments: ', process.argv);
-if (command === 'add') {
-     console.log('Adding Note!');
-} else if (command === 'remove') {
-     console.log('Deleting Note!');
-}
+// if (command === 'add') {
+//      console.log('Adding Note!');
+// } else if (command === 'remove') {
+//      console.log('Deleting Note!');
+// }
 
 /* 
      NPM Yargs Package Uses
@@ -44,8 +45,7 @@ yargs.command({
           }
      },
      handler: function(argv) {
-          console.log('Note Title: ', argv.title);
-          console.log('Note Body: ', argv.body);
+          notes.addNote(argv.title, argv.body);
      }
 });
 
@@ -53,8 +53,20 @@ yargs.command({
 yargs.command({
      command: 'remove',
      describe: 'Removing a note',
-     handler: function() {
-          console.log('Removing a note!')
+     builder: {
+          title: {
+               describe: 'Note Title',
+               demnadOption: true,
+               type: 'string'
+          },
+          body: {
+               describe: 'Note Body',
+               demnadOption: true,
+               type: 'string'
+          }
+     },
+     handler: function(argv) {
+          notes.removeNote(argv.title);
      }
 });
 

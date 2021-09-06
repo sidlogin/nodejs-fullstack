@@ -1,9 +1,9 @@
 const validator = require('validator');
 const chalk = require('chalk');
-const getNotes = require('./notes');
+const notes = require('./notes');
 
 
-const msg = getNotes();
+const msg = notes.getNotes();
 
 /* NPM Validator Package Uses */
 console.log('NPM Validator Package Use: ', validator.isEmail('siddharth@gmail.com'));
