@@ -1,5 +1,12 @@
 const yargs = require('yargs');
 
+/**
+ * Read Command line parameters in Node JS
+ * Use NPM Package YARGS to create customize commands
+ */
+
+
+
 const command = process.argv[2];
 // console.log('NPM Reading Commandline Arguments: ', process.argv);
 if (command === 'add') {
@@ -24,8 +31,21 @@ yargs.version('1.1.0');
 yargs.command({
      command: 'add',
      describe: 'Adding a new note',
-     handler: function() {
-          console.log('Adding a new note!')
+     builder: {
+          title: {
+               describe: 'Note Title',
+               demnadOption: true,
+               type: 'string'
+          },
+          body: {
+               describe: 'Note Body',
+               demnadOption: true,
+               type: 'string'
+          }
+     },
+     handler: function(argv) {
+          console.log('Note Title: ', argv.title);
+          console.log('Note Body: ', argv.body);
      }
 });
 
@@ -56,4 +76,5 @@ yargs.command({
      }
 });
 
-console.log('NPM YARGS for Commandline Arguments: ', yargs.argv);
+yargs.parse();
+// console.log('NPM YARGS for Commandline Arguments: ', yargs.argv);
