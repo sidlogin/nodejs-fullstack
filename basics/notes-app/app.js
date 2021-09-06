@@ -1,12 +1,7 @@
-const fs = require('fs');
+// const fs = require('fs');
+const add = require('./utils');
+const getNotes = require('./notes');
 
-/**
- * Adding NodeJS FileSystem Module to create a new text file with content
- */
+console.log('App.js', add(10, 10));
 
-// fs.writeFileSync('notes.txt', 'My name is Siddharth!');
-
-/**
- * Appending data in to text file using NodeJS FileSystem Append method
- */
-fs.appendFileSync('notes.txt', '\nAppending new line in newly create text file');
+console.log(getNotes());

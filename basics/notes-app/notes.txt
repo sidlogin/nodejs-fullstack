@@ -1,0 +1,3 @@
+My name is Siddharth!Appending new line in newly create text file
+ Appending new line in newly create text file
+Appending new line in newly create text file
