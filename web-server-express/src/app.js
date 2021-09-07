@@ -1,23 +1,21 @@
+const path = require('path');
 const express = require('express');
 
-const app = express();
+// console.log(__dirname);
+// console.log(path.join(__dirname, '../public'));
 
-app.get('', (req, res) => {
-     res.send('Hello Express!');
+const PUBLIC_DIRECTORY_PATH = path.join(__dirname, '../public');
+const App = express();
+
+App.use(express.static(PUBLIC_DIRECTORY_PATH))
+
+App.get('/weather', (req, res) => {
+     res.send({
+          forecast: 'Rain is expected',
+          location: 'Dallas'
+     });
 });
 
-app.get('/help', (req, res) => {
-     res.send('Ready to Help!');
-});
-
-app.get('/about', (req, res) => {
-     res.send('About Express');
-});
-
-app.get('/weather', (req, res) => {
-     res.send('How is the weather today?')
-});
-
-app.listen(3000, () => {
+App.listen(3000, () => {
      console.log('Express Server started on http://localhost:3000');
 })
