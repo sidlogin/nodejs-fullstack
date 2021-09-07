@@ -16,9 +16,16 @@ const product = {
 // const {label: productLabel, stock, rating = 5 } = product;
 // console.log(label, stock, rating);
 
-const new_product = {
-     ...product, ...{ rating: '4.5' }
-};
+// const new_product = {
+//      ...product, ...{ rating: '4.5' }
+// };
 
-const {label: productLabel, stock, rating = 5 } = new_product;
-console.log(productLabel, stock, rating);
+// const {label: productLabel, stock, rating = 5 } = new_product;
+// console.log(productLabel, stock, rating);
+
+const transaction = ((type, { label, stock }) => {
+     console.log(type, label, stock);
+});
+
+transaction('order', product);
+
