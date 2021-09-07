@@ -7,12 +7,12 @@ const location = process.argv[2];
 if (!location) {
      console.log(chalk.red.bold('Please provide an address'));
 } else {
-     geocode(location, (error, data) => {
+     geocode(location, (error, {latitude , longitude, location} = {}) => {
           if (error) {
                return console.log('GeoCode API Error', error)
           }
-          if (data) {
-               forecast(data.latitude, data.longitude, (error, forecastData) => {
+          if (latitude) {
+               forecast(latitude , longitude, (error, forecastData) => {
                     if (error) {
                          return console.log('forecast API Error', error)
                     }
