@@ -1,12 +1,17 @@
 const path = require('path');
 const express = require('express');
 
-const PUBLIC_DIRECTORY_PATH = path.join(__dirname, '../public');
 const app = express();
 
-app.use(express.static(PUBLIC_DIRECTORY_PATH));
-app.set('views', path.join(__dirname, '../views'));
+const PUBLIC_DIRECTORY_PATH = path.join(__dirname, '../public');
+const VIEWS_PATH = path.join(__dirname, '../templates');
+
+// Setup handlebars engine and views location
 app.set('view engine', 'hbs');
+app.set('views', VIEWS_PATH);
+
+// Setup static directory to setup
+app.use(express.static(PUBLIC_DIRECTORY_PATH));
 
 app.get('/weathers', (req, res) => {
      res.render('index', {
