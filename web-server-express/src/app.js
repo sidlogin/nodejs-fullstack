@@ -18,21 +18,21 @@ app.use(express.static(PUBLIC_DIRECTORY_PATH));
 
 app.get('', (req, res) => {
      res.render('index', {
-          title: 'Weather App',
+          title: 'Weather',
           name: 'Siddharth Gupta'
      });
 });
 
 app.get('/about', (req, res) => {
      res.render('about', {
-          title: 'About ExpressJs App',
+          title: 'About',
           name: 'Siddharth Gupta'
      });
 });
 
 app.get('/help', (req, res) => {
-     res.render('about', {
-          title: 'ExpressJs Help',
+     res.render('help', {
+          title: 'Help',
           name: 'Siddharth Gupta'
      });
 });
