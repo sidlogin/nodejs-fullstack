@@ -44,6 +44,22 @@ app.get('/weather', (req, res) => {
      });
 });
 
+app.get('/help/*', (req, res) => {
+     res.render('404', {
+          title: 'Article not found!',
+          name: 'Siddharth Gupta',
+          errorMessage: 'Help article does not exist.'
+     })
+});
+
+app.get('*', (req, res) => {
+     res.render('404', {
+          title: 'Page not found!',
+          name: 'Siddharth Gupta',
+          errorMessage: 'Requested page is not available or exist - (404)'
+     })
+});
+
 app.listen(3000, () => {
      console.log('Express Server started on http://localhost:3000');
 })
