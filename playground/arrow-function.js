@@ -12,7 +12,7 @@ console.log(square(2));
 console.log(squareArrowFn1(3));
 console.log(squareArrowFn2(4));
 
-const event = {
+const eventObj = {
      name: 'Arrow Function with Object',
      guestList: ['Gaurav', 'Naveen', 'Nikhil'],
      printTitle: function() {
@@ -25,8 +25,8 @@ const event = {
      }
 
 };
-event.printTitle();
-event.printGuestList();
+eventObj.printTitle();
+eventObj.printGuestList();
 
 const tasks = {
      tasks: [{
