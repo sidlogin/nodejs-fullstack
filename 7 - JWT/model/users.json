@@ -1,0 +1,11 @@
+[
+    {
+        "username":"Sid1",
+        "password":"$2b$10$tGJtOE7drtMdv0BffTuexenGfgfZp11yMF4govIUPuxsxfYxvUsk."
+    },
+    {
+        "username":"Sid",
+        "password":"$2b$10$OOuiO32loyzaYoNJsKfPI.FZMvueo6SYOBG9RN356vCH.NJHI1uyq",
+        "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNpZCIsImlhdCI6MTY1MDkyMjA5NiwiZXhwIjoxNjUxMDA4NDk2fQ.PsAbys0dbmT8t9m8oCUSyrUdvACzgzzeLnfpRie4pO4"
+    }
+]
